@@ -13,22 +13,59 @@
         const formatter = new MCFormat('&');
 
         function update(value) {
-            const output = document.getElementById("output");
-            const result = formatter.format(value);
+            for (const output of document.getElementsByClassName("output")) {
+                const result = formatter.format(value);
 
-            const children = output.children;
-            if (children.length == 0) {
-                output.appendChild(result);
-            } else {
-                output.replaceChild(result, children.item(0));
+                const children = output.children;
+                if (children.length === 0) {
+                    output.appendChild(result);
+                } else {
+                    output.replaceChild(result, children.item(0));
+                }
             }
         }
     </script>
-</head>
-<body>
-    <div id="output" style="font-size: 48px;"></div>
+    <style>
+        .text {
+            color: #fff;
+            font-family: 'minecraft-regular', monospace;
+            font-size: 20px;
+        }
 
-    <label for="input">Type</label>
-    <input style="width: 90%" type="text" id="input" onkeyup="update(this.value)" />
+        label {
+            margin: 0 20px;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            background: none;
+            border: 1px solid #fff;
+        }
+
+        .output {
+            width: 90%;
+            margin: 20px auto;
+            padding: 20px;
+            font-size: 36px;
+        }
+    </style>
+</head>
+<body style="background-color: #222222;">
+
+<div style="padding: 30px;">
+    <label class="text" for="input">Type</label>
+    <input class="text" type="text" id="input" onkeyup="update(this.value)" />
+</div>
+
+<div class="output" style="background-color: #eaeaea;">
+</div>
+
+<div class="output" style="background-color: #868686;">
+</div>
+
+<div class="output" style="background-color: #171717;">
+</div>
+
 </body>
 </html>
