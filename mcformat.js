@@ -93,7 +93,7 @@ const MCFormat = function (colorChar = '&') {
         }
 
         if (content.length > 0) {
-            active.innerHTML += content.join('');
+            active.innerText += content.join('');
         }
 
         return root;
