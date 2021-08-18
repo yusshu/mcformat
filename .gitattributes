@@ -1,0 +1,4 @@
+*.zip binary
+*.woff binary
+test.html linguist-vendored
+pack.sh linguist-vendored

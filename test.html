@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCFormat Test</title>
+
+    <script src="mcformat.min.js"></script>
+    <link rel="stylesheet" href="mcformat.css">
+
+    <script>
+        const formatter = new MCFormat('&');
+
+        function update(value) {
+            const output = document.getElementById("output");
+            const result = formatter.format(value);
+
+            const children = output.children;
+            if (children.length == 0) {
+                output.appendChild(result);
+            } else {
+                output.replaceChild(result, children.item(0));
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="output" style="font-size: 48px;"></div>
+
+    <label for="input">Type</label>
+    <input style="width: 90%" type="text" id="input" onkeyup="update(this.value)" />
+</body>
+</html>

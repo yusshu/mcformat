@@ -1,0 +1,80 @@
+/*! mcformat v1.0.0 | MIT License | github.com/yusshu/mcformat */
+
+/*
+ * Minecraft Fonts imports
+ * ==========================================================
+ */
+
+/*
+ * Minecraft-Regular font face by Jacob Debono
+ * https://fonts2u.com/minecraft-regular.font
+ */
+@font-face {
+    font-family: 'minecraft-regular';
+    src: url('font/minecraft-regular.woff') format('woff');
+}
+
+/*
+ * Minecraft-Bold font face by Jacob Debono
+ * https://fonts2u.com/minecraft-bold.font
+ */
+@font-face {
+    font-family: 'minecraft-bold';
+    src: url('font/minecraft-bold.woff') format('woff');
+}
+
+/*
+ * Minecraft-Italic font face by Jacob Debono
+ * https://fonts2u.com/minecraft-italic.font
+ */
+@font-face {
+    font-family: 'minecraft-italic';
+    src: url('font/minecraft-italic.woff') format('woff');
+}
+
+/*
+ * Minecraft-Bold-Italic font face by Jacob Debono
+ * https://fonts2u.com/minecraft-bold-italic.font
+ */
+@font-face {
+    font-family: 'minecraft-bolditalic';
+    src: url('font/minecraft-bolditalic.woff') format('woff');
+}
+
+
+/*
+ * Minecraft Colors and Formats
+ * =========================================================
+ */
+
+.mc-black { color: #000000; }
+.mc-dark-blue { color: #0000AA; }
+.mc-dark-green { color: #00AA00; }
+.mc-dark-aqua { color: #00AAAA; }
+.mc-dark-red { color: #AA0000; }
+.mc-dark-purple { color: #AA00AA; }
+.mc-gold { color: #FFAA00; }
+.mc-gray { color: #AAAAAA; }
+.mc-dark-gray { color: #555555; }
+.mc-blue { color: #5555FF; }
+.mc-green { color: #55FF55; }
+.mc-aqua { color: #55FFFF; }
+.mc-red { color: #FF5555; }
+.mc-light-purple { color: #FF55FF; }
+.mc-yellow { color: #FFFF55; }
+.mc-white { color: #FFFFFF; }
+.mc-reset { color: #FFFFFF; }
+
+.mc-strikethrough { text-decoration: line-through; }
+.mc-underline { text-decoration: underline; }
+.mc-bold { font-family: 'minecraft-bold', monospace; }
+.mc-italic { font-family: 'minecraft-italic', monospace; }
+.mc-bold .mc-italic, .mc-italic .mc-bold { font-family: 'minecraft-bolditalic', monospace; }
+
+/*
+ * Base Styles
+ * =========================================================
+ */
+.mc-root {
+    font-family: 'minecraft-regular', monospace;
+}
