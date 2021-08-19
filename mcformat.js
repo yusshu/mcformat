@@ -13,8 +13,8 @@ const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
             5: 'AaBbCcDdEeFGgHhJjKLMmNnOoPpQqRrSsTUuVvWwXxYyZz1234567890#$%^&*-_+=?/\\~',
             4: 'fkt(){}<>',
             3: 'I[]" ',
-            2: '`',
-            1: 'il!:;\'|.,',
+            2: 'l\'',
+            1: 'i!:;|.,',
         };
 
         /*
