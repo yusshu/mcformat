@@ -20,7 +20,7 @@ Fonts weren't created by me, you can download them [here](https://fonts2u.com/do
 JavaScript required code:
 ```javascript
 // Create the formatter
-const formatter = new MCFormat(); // You can specify a color char using 'new MCFormat("&");' 
+const formatter = new MCFormat(); // You can specify options using 'new MCFormat({ colorChar: "&", allowMagic: true });' 
 
 // Convert any string text to an element
 const element = formatter.format('&9&lSome text &7text');
