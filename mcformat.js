@@ -1,6 +1,67 @@
 /*! mcformat v1.0.0 | MIT License | github.com/yusshu/mcformat */
 
-const MCFormat = function (colorChar = '&') {
+const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
+
+    if (allowMagic) {
+
+        /*
+         * Object binding char width to the characters
+         * that have that width.
+         */
+        const charsByLength = {
+            6: '@',
+            5: 'AaBbCcDdEeFGgHhJjKLMmNnOoPpQqRrSsTUuVvWwXxYyZz1234567890#$%^&*-_+=?/\\~',
+            4: 'fkt(){}<>',
+            3: 'I[]" ',
+            2: '`',
+            1: 'il!:;\'|.,',
+        };
+
+        /*
+         * Similar to 'charsByLength', but reversed, it
+         * binds the characters to their length
+         */
+        const lengthByChars = {};
+
+        // copy information from charsByLength to lengthByCHars
+        for (const length in charsByLength) {
+            const chars = charsByLength[length];
+            for (const c of chars) {
+                lengthByChars[c] = length;
+            }
+        }
+
+        /**
+         * Obfuscates the text elements inside the
+         * given node
+         * @param {Node} node
+         */
+        function obfuscate(node) {
+            for (const child of node.childNodes) {
+                if (child.nodeType === Node.TEXT_NODE) {
+                    const content = child.textContent;
+                    let newContent = [];
+                    for (let i = 0; i < content.length; i++) {
+                        const char = content.charAt(i);
+                        const length = lengthByChars[char] || 4;
+                        const chars = charsByLength[length];
+
+                        newContent.push(chars.charAt(Math.floor(Math.random() * chars.length)));
+                    }
+                    child.textContent = newContent.join('');
+                } else if (child.nodeType === Node.ELEMENT_NODE) {
+                    obfuscate(child);
+                }
+            }
+        }
+
+        // finally set the interval that updates all the "magic" elements
+        setInterval(() => {
+            for (const element of document.getElementsByClassName("mc-magic")) {
+                obfuscate(element);
+            }
+        }, 50);
+    }
 
     /**
      * Object containing all color characters
@@ -29,7 +90,8 @@ const MCFormat = function (colorChar = '&') {
         'm': { name: 'strikethrough', pass: true },
         'o': { name: 'italic', pass: true },
         'l': { name: 'bold', pass: true },
-        'n': { name: 'underline', pass: true }
+        'n': { name: 'underline', pass: true },
+        'k': { name: 'magic', pass: true },
     };
 
     this.format = function (input) {
@@ -73,7 +135,7 @@ const MCFormat = function (colorChar = '&') {
                 if (format.pass) {
                     active.appendChild(element);
                 } else {
-                    if (next !== undefined && next != root) {
+                    if (next !== undefined && next !== root) {
                         root.appendChild(next);
                     }
                     next = element;
@@ -88,7 +150,7 @@ const MCFormat = function (colorChar = '&') {
         }
 
         // check for remaining content
-        if (next !== undefined && next != root) {
+        if (next !== undefined && next !== root) {
             root.appendChild(next);
         }
 

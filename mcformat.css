@@ -65,6 +65,7 @@
 .mc-white { color: #FFFFFF; }
 .mc-reset { color: #FFFFFF; }
 
+/* .mc-magic { empty because no styles to apply here } */
 .mc-strikethrough { text-decoration: line-through; }
 .mc-underline { text-decoration: underline; }
 .mc-bold { font-family: 'minecraft-bold', monospace; }

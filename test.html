@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="mcformat.css">
 
     <script>
-        const formatter = new MCFormat('&');
+        const formatter = new MCFormat({ colorChar: '&', allowMagic: true });
 
         function update(value) {
             for (const output of document.getElementsByClassName("output")) {
