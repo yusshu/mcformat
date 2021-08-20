@@ -114,7 +114,7 @@ const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
                 continue;
             }
 
-            const nextIndex = ++i;
+            const nextIndex = i + 1;
 
             if (nextIndex >= input.length) {
                 // last character, just push it
@@ -142,10 +142,10 @@ const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
                 }
 
                 active = element;
+                i++;
             } else {
-                // not a code, push everything
+                // not a code, push
                 content.push(current);
-                content.push(code);
             }
         }
 
