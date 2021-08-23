@@ -94,6 +94,8 @@ const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
         'k': { name: 'magic', pass: true },
     };
 
+    const HEX_CHARS = "0123456789abcdef";
+
     this.format = function (input) {
 
         /** The root element, will contain all the other elements */
@@ -143,6 +145,43 @@ const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
 
                 active = element;
                 i++;
+            } else if (code === "#"
+                && (nextIndex + 6 < input.length)) {
+
+                const color = ['#'];
+                let found = true;
+
+                // check for hex colors
+                for (let j = 0; j < 6; j++) {
+                    const index = nextIndex + j + 1;
+                    const char = input.charAt(index).toLowerCase();
+                    const value = HEX_CHARS.indexOf(char);
+
+                    if (value === -1) {
+                        found = false;
+                        break;
+                    }
+
+                    // push the color
+                    color.push(char);
+                }
+
+                if (found) {
+                    const element = document.createElement("span");
+                    element.style.color = color.join('');
+                    element.classList.add('mc-hex');
+
+                    active.innerText = content.join(''); // set the content to the previous element
+                    content = []; // clear the content
+
+                    if (next !== undefined && next !== root) {
+                        root.appendChild(next);
+                    }
+                    next = element;
+                    active = element;
+                    // process next
+                    i = nextIndex + 6;
+                }
             } else {
                 // not a code, push
                 content.push(current);
