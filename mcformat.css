@@ -1,4 +1,4 @@
-/*! mcformat v1.1.0 | MIT License | github.com/yusshu/mcformat */
+/*! mcformat v1.2.0 | MIT License | github.com/yusshu/mcformat */
 
 /*
  * Minecraft Fonts imports
@@ -66,6 +66,7 @@
 .mc-reset { color: #FFFFFF; }
 
 /* .mc-magic { empty because no styles to apply here } */
+/* .mc-hex { empty } */
 .mc-strikethrough { text-decoration: line-through; }
 .mc-underline { text-decoration: underline; }
 .mc-bold { font-family: 'minecraft-bold', monospace; }
