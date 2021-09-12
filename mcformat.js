@@ -1,4 +1,4 @@
-/*! mcformat v1.2.0 | MIT License | github.com/yusshu/mcformat */
+/*! mcformat v1.3.0 | MIT License | github.com/yusshu/mcformat */
 
 const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
 
