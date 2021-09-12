@@ -9,12 +9,15 @@ const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
          * that have that width.
          */
         const charsByLength = {
-            6: '@',
-            5: 'AaBbCcDdEeFGgHhJjKLMmNnOoPpQqRrSsTUuVvWwXxYyZz1234567890#$%^&*-_+=?/\\~',
-            4: 'fkt(){}<>',
-            3: 'I[]" ',
-            2: 'l\'',
-            1: 'i!:;|.,',
+            100: '¸',
+            200: 'i.,:;!¡|',
+            300: 'íl·•­\'',
+            400: 'Iît[] ¤¸',
+            500: 'fk*(){}"¢><',
+            600: 'AÄÅÆBCÇDEFGHJKLMNÑOØPQRSTUÜVWXYZaáâàåæbcçdeêëghjmnñoóôöòøpqrsuúûüùvwxyÿzΩ0123456789?¿#/\\-—_«»$ƒ£+÷=±¬∑%♀&§^⌂',
+            700: '~@¶®',
+            800: '≈∞♂♠♣♥♦',
+            900: '√☺☻☼'
         };
 
         /*
@@ -43,7 +46,7 @@ const MCFormat = function ({ colorChar = '&', allowMagic = true }) {
                     let newContent = [];
                     for (let i = 0; i < content.length; i++) {
                         const char = content.charAt(i);
-                        const length = lengthByChars[char] || 4;
+                        const length = lengthByChars[char] || 400;
                         const chars = charsByLength[length];
 
                         newContent.push(chars.charAt(Math.floor(Math.random() * chars.length)));
