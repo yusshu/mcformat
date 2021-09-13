@@ -47,23 +47,23 @@
  * =========================================================
  */
 
-.mc-black { color: #000000; }
-.mc-dark-blue { color: #0000AA; }
-.mc-dark-green { color: #00AA00; }
-.mc-dark-aqua { color: #00AAAA; }
-.mc-dark-red { color: #AA0000; }
-.mc-dark-purple { color: #AA00AA; }
-.mc-gold { color: #FFAA00; }
-.mc-gray { color: #AAAAAA; }
-.mc-dark-gray { color: #555555; }
-.mc-blue { color: #5555FF; }
-.mc-green { color: #55FF55; }
-.mc-aqua { color: #55FFFF; }
-.mc-red { color: #FF5555; }
-.mc-light-purple { color: #FF55FF; }
-.mc-yellow { color: #FFFF55; }
-.mc-white { color: #FFFFFF; }
-.mc-reset { color: #FFFFFF; }
+.mc-black        { color: #000000; text-shadow: var(--soffy) var(--soffx) #000000; }
+.mc-dark-blue    { color: #0000AA; text-shadow: var(--soffy) var(--soffx) #00002A; }
+.mc-dark-green   { color: #00AA00; text-shadow: var(--soffy) var(--soffx) #002A00; }
+.mc-dark-aqua    { color: #00AAAA; text-shadow: var(--soffy) var(--soffx) #002A2A; }
+.mc-dark-red     { color: #AA0000; text-shadow: var(--soffy) var(--soffx) #2A0000; }
+.mc-dark-purple  { color: #AA00AA; text-shadow: var(--soffy) var(--soffx) #2A002A; }
+.mc-gold         { color: #FFAA00; text-shadow: var(--soffy) var(--soffx) #2A2A00; }
+.mc-gray         { color: #AAAAAA; text-shadow: var(--soffy) var(--soffx) #2A2A2A; }
+.mc-dark-gray    { color: #555555; text-shadow: var(--soffy) var(--soffx) #151515; }
+.mc-blue         { color: #5555FF; text-shadow: var(--soffy) var(--soffx) #15153F;}
+.mc-green        { color: #55FF55; text-shadow: var(--soffy) var(--soffx) #153F15; }
+.mc-aqua         { color: #55FFFF; text-shadow: var(--soffy) var(--soffx) #153F3F; }
+.mc-red          { color: #FF5555; text-shadow: var(--soffy) var(--soffx) #3F1515; }
+.mc-light-purple { color: #FF55FF; text-shadow: var(--soffy) var(--soffx) #3F153F; }
+.mc-yellow       { color: #FFFF55; text-shadow: var(--soffy) var(--soffx) #3F3F15; }
+.mc-white        { color: #FFFFFF; text-shadow: var(--soffy) var(--soffx) #3F3F3F; }
+.mc-reset        { color: #FFFFFF; text-shadow: var(--soffy) var(--soffx) #3F3F3F; }
 
 /* .mc-magic { empty because no styles to apply here } */
 /* .mc-hex { empty } */
@@ -79,4 +79,7 @@
  */
 .mc-root {
     font-family: 'minecraft-regular', monospace;
+    /* Shadow Offset X and Y for texts */
+    --soffx: 0.2rem;
+    --soffy: 0.2rem;
 }
